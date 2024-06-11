@@ -5,7 +5,14 @@
     --background-menu: #ffb700;
 }
 body {
-    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+    color: #000;
+    a{
+        text-decoration: none;
+    }
 }
 // nav bottom
 .mobile-bottom-nav{
@@ -19,6 +26,7 @@ body {
     border-radius: 5px 5px 0 0;
     border-top: 2px solid #f25c05;
     ul{
+        padding-left: 0;
         list-style: none;
         display: flex;
         li{
@@ -35,16 +43,17 @@ body {
                 margin-top: 5px;
                 font-weight: 700;
                 font-size: 10px;
+                max-width: 100%;
                 .count {
                     position: absolute;
                     top: 0px;
                     border-radius: 50%;
                     width: 15px;
                     height: 15px;
-                    background: #000;
-                    color: #fff;
-                    right: 0px;
-                   
+                    background: black;
+                    color: white;
+                    right: 50%; /* Canh giữa span so với phần tử cha */
+                    transform: translateX(100%); /* Điều chỉnh để span canh giữa */
                 }
             }
             img{
@@ -144,12 +153,502 @@ body {
         align-items: center;
         padding: 20px 0;
         .logo{
+            align-items: end;
+            justify-content: space-between;
+            display: flex;
+            .menu-bar{
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            // 
+            .modal.left {
+                z-index: 99999;
+                .modal-dialog {
+                    overflow: auto;
+                    position: fixed;
+                    margin: 0;
+                    width: 70.5%;
+                    height: 100%;
+                    max-width: none;
+                    transition: transform 0.3s ease-in-out;
+                    .modal-content {
+                    background-color: #000;
+                    height: 100%;
+                    border: 0;
+                    border-radius: 0;
+                    .modal-body{
+                        padding: 0;
+                        color: white;
+                        background-color: #000;
+                        .box-img-header{
+                            text-align: center;
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid #ffb700;
+                            img{
+                                padding-left: 10px;
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+                        .box-sign{
+                            padding: 5px;
+                            ul{
+                                margin-bottom: 0;
+                                display: flex;
+                                padding-left: 0;
+                                list-style: none;
+                                li{
+                                    &:nth-child(1){
+                                        padding-right: 5px;
+                                    }
+                                    &:nth-child(2){
+                                        padding-left: 5px;
+                                    }
+                                    text-align: center;
+                                    float: left;
+                                    width: 50%;
+                                    max-width: 100%;
+                                    a{
+                                        display: block;
+                                        background: #ffb700;
+                                        color: #fff;
+                                        padding: 8px 5px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        .menu1{
+                            padding: 5px;
+                            padding-bottom: 0;
+                            > span{
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #ffb700;
+                                display: block;
+                                position: relative;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                text-transform: uppercase;
+                                text-align: center;
+                                line-height: 35px;
+                                pointer-events: none;
+                                border: 1px solid #ffb700;
+                            }
+                            ul{
+                                padding-left: 0;
+                                margin-top: 5px;
+                                list-style: none;
+                                li{
+                                    margin-bottom: 10px;
+                                    > a{
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                        padding: 0 30px 0 8px !important;
+                                        color: #fff;
+                                        height: unset;
+                                        line-height: 30px;
+                                        display: block;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                    }
+                                    .accordion{
+                                        --bs-accordion-bg: none !important;
+                                        .accordion-item{
+                                                background-color: black;
+                                                border: none;
+                                            .accordion-header{
+                                                text-transform: uppercase;
+                                                    .accordion-button{
+                                                        padding: 0 0px 0 10px !important;
+                                                        color: white !important;
+                                                        border: none;
+                                                        text-transform: uppercase;
+                                                        text-decoration: none;
+                                                        height: unset;
+                                                        line-height: 30px;
+                                                        display: block;
+                                                        font-size: 16px;
+                                                        font-weight: 600;
+                                                        &::after {
+                                                            font-weight: 600;
+                                                            color: #666;
+                                                            font-size: 25px;
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            float: right;
+                                                            content: "\002b" !important;
+                                                            background-image: none !important; 
+                                                        }
+                                                        &:not(.collapsed) {
+                                                            
+                                                        &:after {
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            content: "\2212" !important;
+                                                            transform:none !important;
+                                                            color: #f25c05 !important;
+                                                        }
+                                                             background-color: black; 
+                                                             box-shadow: none;
+                                                             color: #f25c05 !important;
+                                                        }
+                                                    }                                                  
+                                            }
+                                            .accordion-collapse{
+                                                .accordion-body{
+                                                    padding: 0;
+                                                    padding-left: 10px;
+                                                    ul{
+                                                        padding-left: 0;
+                                                        li{
+                                                            a{
+                                                                text-transform: none;
+                                                                color: #fff;
+                                                                height: unset;
+                                                                line-height: 30px;
+                                                                display: block;
+                                                                font-size: 16px;
+                                                                font-weight: 600;
+                                                            }
+
+                                                        }
+                                                    }
+                                                    .accordion2 button {
+                                                        background-color: black;
+                                                        position: relative;
+                                                        display: block;
+                                                        text-align: left;
+                                                        width: 100%;
+                                                        font-weight: 400;
+                                                        border: none;
+                                                        outline: none;
+                                                      }
+                                                      
+                                                      .accordion2 button 
+                                                      {
+                                                        .accordion2-title {
+                                                            text-transform: none;
+                                                            color: #fff;
+                                                            height: unset;
+                                                            line-height: 30px;
+                                                            display: block;
+                                                            font-size: 16px;
+                                                            font-weight: 600;
+                                                          
+                                                           }
+                                                           &:focus{
+                                                            .accordion2-title{
+                                                                color: #e75e03;
+                                                            }
+                                                            .icon::before {
+                                                                color: #e75e03 !important;
+                                                            }
+                                                            .icon::after {
+                                                                color: #e75e03 !important;
+                                                            }
+                                                        }
+                                                      }
+                                                      
+                                                      .accordion2 button .icon {
+                                                        display: inline-block;
+                                                        position: absolute;
+                                                        top: 18px;
+                                                        right: 0;
+                                                        width: 22px;
+                                                        height: 22px;
+                                                      }
+                                                      
+                                                      .accordion2 button .icon::before {
+                                                        color: gray !important;                     display: block;
+                                                        position: absolute;
+                                                        content: '';
+                                                        top: 9px;
+                                                        left: 5px;
+                                                        width: 10px;
+                                                        height: 2px;
+                                                        background: currentColor;
+                                                      }
+                                                      .accordion2 button .icon::after {
+                                                        color: gray !important;                     display: block;
+                                                        position: absolute;
+                                                        content: '';
+                                                        top: 5px;
+                                                        left: 9px;
+                                                        width: 2px;
+                                                        height: 10px;
+                                                        background: currentColor;
+                                                      }
+                                                
+                                                      .accordion2 button[aria-expanded='true'] .icon::after {
+                                                        width: 0;
+                                                      }
+                                                      .accordion2 button[aria-expanded='true'] + .accordion2-content {
+                                                        opacity: 1;
+                                                        max-height: 100%;
+                                                        transition: all 200ms linear;
+                                                        will-change: opacity, max-height;
+                                                      }
+                                                      .accordion2 .accordion2-content {
+                                                        font-size: 16px;
+                                                        font-weight: 500;
+                                                        background-color: black;
+                                                        opacity: 0;
+                                                        max-height: 0;
+                                                        overflow: hidden;
+                                                        transition: opacity 200ms linear, max-height 200ms linear;
+                                                        will-change: opacity, max-height;
+                                                        ul{
+                                                            padding-left: 5px;
+                                                            list-style: none;
+                                                            li{
+                                                                a{
+                                                                    color: white;
+                                                                    text-decoration: none;
+                                                                }
+                                                            }
+                                                        }
+                                                      }
+                                                }
+                                            }
+                                        }
+                                    }
+                            
+                                }
+                            }
+                        }
+                        .menu2{
+                            padding: 5px;
+                            padding-top: 0px;
+                            > span{
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #ffb700;
+                                display: block;
+                                position: relative;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                text-transform: uppercase;
+                                text-align: center;
+                                line-height: 35px;
+                                pointer-events: none;
+                                border: 1px solid #ffb700;
+                            }
+                            ul{
+                                padding-left: 0;
+                                margin-top: 5px;
+                                list-style: none;
+                                li{
+                                    margin-bottom: 10px;
+                                    > a{
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                        padding: 0 30px 0 8px !important;
+                                        color: #fff;
+                                        height: unset;
+                                        line-height: 30px;
+                                        display: block;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                    }
+                                    .a2{
+                                        --bs-accordion-bg: none !important;
+                                        .accordion-item{
+                                                background-color: black;
+                                                border: none;
+                                            .accordion-header{
+                                                text-transform: uppercase;
+                                                    .accordion-button{
+                                                        a{
+                                                            padding-left: 40px !important;
+                                                            background-repeat: no-repeat;
+                                                            background-size: 25px;
+                                                            background-position: center left;
+                                                            background-position-x: 8px;
+                                                            text-decoration: none;
+                                                        }
+                                                        padding: 0 !important;
+                                                        color: white !important;
+                                                        border: none;
+                                                        text-transform: none;
+                                                        text-decoration: none;
+                                                        height: unset;
+                                                        line-height: 30px;
+                                                        display: block;
+                                                        font-size: 16px;
+                                                        font-weight: 600;
+                                                        &::after {
+                                                            font-weight: 600;
+                                                            color: #666;
+                                                            font-size: 25px;
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            float: right;
+                                                            content: "\002b" !important;
+                                                            background-image: none !important; 
+                                                        }
+                                                        &:not(.collapsed) {
+                                                            
+                                                        &:after {
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            content: "\2212" !important;
+                                                            transform:none !important;
+                                                            color: #f25c05 !important;
+                                                        }
+                                                             background-color: black; 
+                                                             box-shadow: none;
+                                                             color: #f25c05 !important;
+                                                        }
+                                                    }                                                  
+                                            }
+                                            .accordion-collapse{
+                                                .accordion-body{
+                                                    padding: 0;
+                                                    padding-left: 10px;
+                                                    ul{
+                                                        padding-left: 0;
+                                                        li{
+                                                            a{
+                                                                text-transform: none;
+                                                                color: #fff;
+                                                                height: unset;
+                                                                line-height: 30px;
+                                                                display: block;
+                                                                font-size: 16px;
+                                                                font-weight: 600;
+                                                            }
+
+                                                        }
+                                                    }
+                                                    .accordion2 button {
+                                                        background-color: black;
+                                                        position: relative;
+                                                        display: block;
+                                                        text-align: left;
+                                                        width: 100%;
+                                                        font-weight: 400;
+                                                        border: none;
+                                                        outline: none;
+                                                      }
+                                                      
+                                                      .accordion2 button 
+                                                      {
+                                                        .accordion2-title {
+                                                            text-transform: none;
+                                                            color: #fff;
+                                                            height: unset;
+                                                            line-height: 30px;
+                                                            display: block;
+                                                            font-size: 16px;
+                                                            font-weight: 600;
+                                                          
+                                                           }
+                                                           &:focus{
+                                                            .accordion2-title{
+                                                                color: #e75e03;
+                                                            }
+                                                            .icon::before {
+                                                                color: #e75e03 !important;
+                                                            }
+                                                            .icon::after {
+                                                                color: #e75e03 !important;
+                                                            }
+                                                        }
+                                                      }
+                                                      
+                                                      .accordion2 button .icon {
+                                                        display: inline-block;
+                                                        position: absolute;
+                                                        top: 18px;
+                                                        right: 0;
+                                                        width: 22px;
+                                                        height: 22px;
+                                                      }
+                                                      
+                                                      .accordion2 button .icon::before {
+                                                        color: gray !important;                     display: block;
+                                                        position: absolute;
+                                                        content: '';
+                                                        top: 9px;
+                                                        left: 5px;
+                                                        width: 10px;
+                                                        height: 2px;
+                                                        background: currentColor;
+                                                      }
+                                                      .accordion2 button .icon::after {
+                                                        color: gray !important;                     display: block;
+                                                        position: absolute;
+                                                        content: '';
+                                                        top: 5px;
+                                                        left: 9px;
+                                                        width: 2px;
+                                                        height: 10px;
+                                                        background: currentColor;
+                                                      }
+                                                
+                                                      .accordion2 button[aria-expanded='true'] .icon::after {
+                                                        width: 0;
+                                                      }
+                                                      .accordion2 button[aria-expanded='true'] + .accordion2-content {
+                                                        opacity: 1;
+                                                        max-height: 100%;
+                                                        transition: all 200ms linear;
+                                                        will-change: opacity, max-height;
+                                                      }
+                                                      .accordion2 .accordion2-content {
+                                                        font-size: 16px;
+                                                        font-weight: 500;
+                                                        background-color: black;
+                                                        opacity: 0;
+                                                        max-height: 0;
+                                                        overflow: hidden;
+                                                        transition: opacity 200ms linear, max-height 200ms linear;
+                                                        will-change: opacity, max-height;
+                                                        ul{
+                                                            padding-left: 5px;
+                                                            list-style: none;
+                                                            li{
+                                                                a{
+                                                                    color: white;
+                                                                    text-decoration: none;
+                                                                }
+                                                            }
+                                                        }
+                                                      }
+                                                }
+                                            }
+                                        }
+                                    }
+                            
+                                }
+                            }
+                        }
+                    }
+                    }
+                  }
+                  
+            }   
+        
+              .modal.left.fade .modal-dialog {
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(-100%);
+              }
+        
+              .modal.left.fade.show .modal-dialog {
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(0);
+              }
+            // 
             max-width: 100%;
             height: auto;
-            overflow: hidden;
             img{
-            max-width: 100%;
-            height: auto;
+                padding-left: 10px;
+                max-width: 100%;
+                height: auto;
             }
         }
         .search{
@@ -189,11 +688,10 @@ body {
         }
        .control{
         ul {
-            display: flex;
-            justify-content: end;
-            align-items: center;
+            float: right;
             margin-bottom: 0;
             li{
+                float: left;
                 &:nth-last-of-type(1){
                     margin-right: 0;
                 }
@@ -262,17 +760,171 @@ body {
         font-size: 16px;
         font-weight: bold;
         text-transform: uppercase;
+        position: relative;
+        cursor: pointer;   
+            .drop-down{
+                max-height: 440px;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                z-index: 99;
+                transform: perspective(500px) rotateX(-90deg);
+                transition: all 0.5s ease-in-out;
+                width: 100%;
+                .item_small{
+                    width: 100%;
+                    list-style: none;
+                    position: absolute;
+                    padding-left: 0;
+                    &::before{
+                        content: '';
+                        display: block;
+                        height: 22.5px;
+                    }
+                   > li{
+                    &:nth-child(2){
+                        .drop-down-layer3{
+                            top: -100%;
+                        }
+                    }
+                    &:nth-child(3){
+                        .drop-down-layer3{
+                            top: -200%;
+                        }
+                    }
+                    &:nth-child(4){
+                        .drop-down-layer3{
+                            top: -300%;
+                        }
+                    }
+                    &:nth-child(5){
+                        .drop-down-layer3{
+                            top: -400%;
+                        }
+                    }
+                    &:nth-child(6){
+                        .drop-down-layer3{
+                            top: -500%;
+                        }
+                    }
+                    &:nth-child(7){
+                        .drop-down-layer3{
+                            top: -600%;
+                        }
+                    }
+                    &:nth-child(8){
+                        .drop-down-layer3{
+                            top: -700%;
+                        }
+                    }
+                    &:nth-child(9){
+                        .drop-down-layer3{
+                            top: -800%;
+                        }
+                    }
+                    &:nth-child(10){
+                        .drop-down-layer3{
+                            top: -900%;
+                        }
+                    }
+                        background-color: white;
+                        position: relative;
+                        a{
+                            background-size: 25px;
+                            background-position: center left;
+                            background-position-x: 8px;
+                            text-decoration: none;
+                            background-repeat: no-repeat;
+                            background-color: black;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 24px;
+                            display: block;
+                            color: white;
+                            position: relative;
+                            text-align: left;
+                            text-transform: none;
+                            &:hover{
+                                color: white;
+                                background-color: #e75e03;
+                            }
+                            i{
+                                top: 15px;
+                                height: 5px;
+                                transform: rotate(-360deg);
+                                position: absolute;
+                                right: 10px;
+                            }
+                        }
+                        &:hover{
+                            .drop-down-layer3{
+                                transition: all 0.3s ease-in-out;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        .drop-down-layer3{
+                            min-height: 440px;
+                            height: 100%;
+                            border: 2px solid #ffb700;
+                            padding-left: 0px;
+                            margin-left: 0px;
+                            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                            background-color: white;
+                            position: absolute;
+                            transition: all 0.3s ease-in-out;
+                            opacity: 0;
+                            visibility: hidden;
+                            padding: 25px 25px 0px 35px;
+                            left: 100%;
+                            min-width: 260%;
+                            top: 0;
+                            overflow-y: auto;
+                            .nav_item{
+                                padding: 0px 15px;
+                                display: block;
+                                float: left;
+                                a{
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    display: block;
+                                    padding: 0px 0px 8px 0px;
+                                    margin-bottom: 0px;
+                                    position: relative;
+                                    border-bottom: 0px;
+                                    &:hover{
+                                        color: #e75e03;
+                                    }
+                                }
+                
+                                }
+                        }
+                        
+                    }
+                 }
+            }
+            &:hover,&:focus{
+                .drop-down{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: perspective(500px) rotateX(0deg);
+                    transition: all 0.5s ease-in-out;
+                }
+            }
     }
     .right{
         max-width: 100%;
-        overflow: auto;
         text-wrap: nowrap;
+        overflow: auto;
+
         &::-webkit-scrollbar {
             display: none; 
         }
         display: flex;
         align-items: center;
          ul{
+            height: auto;
         padding: 0 15px;
         display: flex;
         margin-bottom: 0;
@@ -285,6 +937,7 @@ body {
             font-weight: bold;
             text-transform: uppercase;
             margin-right: 20px;
+            z-index: 9999;
             a{
                 text-decoration: none;
                 color: black;
@@ -299,13 +952,12 @@ body {
                 }
             }
             .drop-down{
+                position: absolute;
                 visibility: hidden;
                 opacity: 0;
-                z-index: 9;
-                position: relative;
-                transform:rotatex(-90deg);
+                z-index: 99;
+                transform: perspective(500px) rotateX(-90deg);
                 transition: all 0.5s ease-in-out;
-                box-shadow: 0px -100px 500px rgba(0,0,0,0);
                 .item_small{
                     position: absolute;
                     display: inline-block;
@@ -317,6 +969,7 @@ body {
                         height: 15.5px;
                     }
                     li{
+                        position: relative;
                         a{
                             background-color: white;
                             font-weight: 400;
@@ -331,22 +984,67 @@ body {
                             &:hover{
                                 color: #e75e03;
                             }
+                            i{
+                                height: 25px;
+                                transform: rotate(-90deg);
+                                position: absolute;
+                                right: 10px;
+                            }
+                        }
+                        &:hover{
+                            .drop-down-layer2{
+                                transition: all 0.3s ease-in-out;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        .drop-down-layer2{
+                            position: absolute;
+                            transition: all 0.3s ease-in-out;
+                            opacity: 0;
+                            visibility: hidden;
+                            top: 0;
+                            left: 100%;
+                        ul{
+                            position: absolute;
+                            display: inline-block;
+                            min-width: 275px;
+                            padding-left: 0;
+                            li{
+                                position: relative;
+                                a{
+                                    background-color: white;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    display: block;
+                                    padding: 6px 20px 6px 10px;
+                                    color: #000;
+                                    position: relative;
+                                    text-align: left;
+                                    text-transform: none;
+                                    &:hover{
+                                        color: #e75e03;
+                                    }
+                                }
+                
+                                }
+                            }
                         }
                     }
                  }
             }
             &:hover,&:focus{
                 .drop-down{
-                    transition: all 0.5s ease-in-out;
                     visibility: visible;
-                    transform:rotatex(0deg);
                     opacity: 1;
+                    transform: perspective(500px) rotateX(0deg);
+                    transition: all 0.5s ease-in-out;
                 }
             }
         }
     }
     }
-   
 }
 //banner
 .banner {
@@ -3031,17 +3729,138 @@ body {
         }
     }
 }
+// 
+// back top
+.backtop {
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    bottom: 100px;
+    top: auto !important;
+    right: 20px;
+    background: #ffb700;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    z-index: 999;
+    border: 1px solid #fff;
+    opacity: 0;
+    svg{
+        width: 30px;
+    height: 30px;
+    color: black;
+    }
+}
+.show{
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+.hidden{
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+// link zalo
+.zalo-link{
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    bottom: 55px;
+    right: 60px;
+    top: auto !important;
+    
+
+    z-index: 999;
+   
+}
+// add contact
+.add-contact {
+     .box-item:before, .box-item:after {
+        position: absolute;
+        content: '';
+        height: 48px;
+        width: 48px;
+        left: 0;
+        top: 0;
+        background: #ffb700;
+        border-radius: 50%;
+    }
+    .box-item .svgico {
+        svg{
+            animation: iconSkew 1s infinite ease-out;
+            fill: #000;
+            width: 30px;
+            height: 46px;
+            transition: opacity 0.35s ease-in-out;
+        }
+        .svgico--close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.3);
+            transition: opacity 0.35s ease-in-out;
+        }
+        position: relative;
+        z-index: 4;
+        height: 48px;
+        width: 48px;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        cursor: pointer;
+        background: #ffb700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        animation: pulse 2s infinite;
+        animation: pulse 2s infinite;
+    }
+    position: fixed;
+    bottom: 170px;
+    right: 17px;
+    margin: 0;
+    z-index: 990;
+    cursor: pointer;
+    top: auto !important;
+}
 
 // animate
+// animate ảnh sáng chạy 
 @keyframes shine {
     100% {
         left: 125%;
     }
 }
-
+// animate chạy text top bar
 @keyframes moveTopBarText {
     0%, 16.67% { opacity: 1; }   
     33.33%, 100% { opacity: 0; } 
+}
+// animate lắc icon liên hệ
+@keyframes iconSkew{
+    0% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    10% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    20% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    30% {
+        transform: rotate(-25deg) scale(1) skew(1deg);
+    }
+    40% {
+        transform: rotate(25deg) scale(1) skew(1deg);
+    }
+    
+    50% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }
+    100% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+    }    
 }
 
 // reposive
@@ -3056,7 +3875,7 @@ body {
     }
     .menu-logo .menu1-content .control ul {
         li{
-            margin-right: 5px;
+            margin-right: 0px;
             a{
                 .title {
                     font-size: 14px;
@@ -3100,6 +3919,58 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+    .menu-logo .menu1-content .control{
+        ul {
+            float: right;
+            margin-bottom: 0;
+            li{
+                float: left;
+                &:nth-last-of-type(1){
+                    margin-right: 0;
+                }
+                margin-right: 20px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                .icon{
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #ffb700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    margin-right: 5px;
+                    svg{
+                        width: 24px;
+                        height: 24px;
+                        fill: #ffb700;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    .title{
+                        font-size: 18px;
+                        color: #ffb700;
+                        font-weight: 700;
+                    }
+                    .content{
+                        font-size: 14px;
+                        span{
+                            color: #ffb700;
+                        }
+                    }
+                    &:hover{
+                        color: #f25c05;
+                        .title{
+                            color: #f25c05;
+                        }
+                    }
+                }
+            }
+        }
+       }
     .menu {
         display: none;
     }
@@ -3153,11 +4024,15 @@ body {
     }
     .menu-logo .menu1-content {
         .logo{
+            justify-content: center;
             text-align: center;
             padding: 10px 0;
             img{
                 height: 50px;
                 max-width: 100%;
+            }
+            .menu-bar svg{
+                display: none;
             }
         }
       .control {
@@ -3196,6 +4071,9 @@ body {
         .accordion2{
             display: block;
         }
+    }
+    .footer{
+        padding-bottom: 60px;
     }
 }
 

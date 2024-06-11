@@ -1,10 +1,18 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --background-menu: #ffb700;
 }
 
 body {
+  font-size: 14px;
   font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  color: #000;
+}
+body a {
+  text-decoration: none;
 }
 
 .mobile-bottom-nav {
@@ -19,6 +27,7 @@ body {
   border-top: 2px solid #f25c05;
 }
 .mobile-bottom-nav ul {
+  padding-left: 0;
   list-style: none;
   display: flex;
 }
@@ -37,6 +46,7 @@ body {
   margin-top: 5px;
   font-weight: 700;
   font-size: 10px;
+  max-width: 100%;
 }
 .mobile-bottom-nav ul li a .count {
   position: absolute;
@@ -44,9 +54,10 @@ body {
   border-radius: 50%;
   width: 15px;
   height: 15px;
-  background: #000;
-  color: #fff;
-  right: 0px;
+  background: black;
+  color: white;
+  right: 50%; /* Canh giữa span so với phần tử cha */
+  transform: translateX(100%); /* Điều chỉnh để span canh giữa */
 }
 .mobile-bottom-nav ul li img {
   max-height: 25px;
@@ -138,11 +149,460 @@ body {
   padding: 20px 0;
 }
 .menu-logo .menu1-content .logo {
+  align-items: end;
+  justify-content: space-between;
+  display: flex;
   max-width: 100%;
   height: auto;
+}
+.menu-logo .menu1-content .logo .menu-bar svg {
+  width: 20px;
+  height: 20px;
+}
+.menu-logo .menu1-content .logo .modal.left {
+  z-index: 99999;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog {
+  overflow: auto;
+  position: fixed;
+  margin: 0;
+  width: 70.5%;
+  height: 100%;
+  max-width: none;
+  transition: transform 0.3s ease-in-out;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content {
+  background-color: #000;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body {
+  padding: 0;
+  color: white;
+  background-color: #000;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-img-header {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffb700;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-img-header img {
+  padding-left: 10px;
+  max-width: 100%;
+  height: auto;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign {
+  padding: 5px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign ul {
+  margin-bottom: 0;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign ul li {
+  text-align: center;
+  float: left;
+  width: 50%;
+  max-width: 100%;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign ul li:nth-child(1) {
+  padding-right: 5px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign ul li:nth-child(2) {
+  padding-left: 5px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .box-sign ul li a {
+  display: block;
+  background: #ffb700;
+  color: #fff;
+  padding: 8px 5px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 {
+  padding: 5px;
+  padding-bottom: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 > span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffb700;
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 35px;
+  pointer-events: none;
+  border: 1px solid #ffb700;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul {
+  padding-left: 0;
+  margin-top: 5px;
+  list-style: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li {
+  margin-bottom: 10px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li > a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 30px 0 8px !important;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion {
+  --bs-accordion-bg: none !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item {
+  background-color: black;
+  border: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-header {
+  text-transform: uppercase;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-header .accordion-button {
+  padding: 0 0px 0 10px !important;
+  color: white !important;
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-header .accordion-button::after {
+  font-weight: 600;
+  color: #666;
+  font-size: 25px;
+  width: 20px;
+  height: 20px;
+  float: right;
+  content: "+" !important;
+  background-image: none !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  background-color: black;
+  box-shadow: none;
+  color: #f25c05 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed):after {
+  width: 20px;
+  height: 20px;
+  content: "−" !important;
+  transform: none !important;
+  color: #f25c05 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body {
+  padding: 0;
+  padding-left: 10px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body ul {
+  padding-left: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body ul li a {
+  text-transform: none;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button {
+  background-color: black;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-weight: 400;
+  border: none;
+  outline: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button .accordion2-title {
+  text-transform: none;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .accordion2-title {
+  color: #e75e03;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .icon::before {
+  color: #e75e03 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .icon::after {
+  color: #e75e03 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon::before {
+  color: gray !important;
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon::after {
+  color: gray !important;
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 button[aria-expanded=true] + .accordion2-content {
+  opacity: 1;
+  max-height: 100%;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: black;
+  opacity: 0;
+  max-height: 0;
   overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content ul {
+  padding-left: 5px;
+  list-style: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu1 ul li .accordion .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 {
+  padding: 5px;
+  padding-top: 0px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 > span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffb700;
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 35px;
+  pointer-events: none;
+  border: 1px solid #ffb700;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul {
+  padding-left: 0;
+  margin-top: 5px;
+  list-style: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li {
+  margin-bottom: 10px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li > a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 30px 0 8px !important;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 {
+  --bs-accordion-bg: none !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item {
+  background-color: black;
+  border: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header {
+  text-transform: uppercase;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header .accordion-button {
+  padding: 0 !important;
+  color: white !important;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header .accordion-button a {
+  padding-left: 40px !important;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center left;
+  background-position-x: 8px;
+  text-decoration: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header .accordion-button::after {
+  font-weight: 600;
+  color: #666;
+  font-size: 25px;
+  width: 20px;
+  height: 20px;
+  float: right;
+  content: "+" !important;
+  background-image: none !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  background-color: black;
+  box-shadow: none;
+  color: #f25c05 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-header .accordion-button:not(.collapsed):after {
+  width: 20px;
+  height: 20px;
+  content: "−" !important;
+  transform: none !important;
+  color: #f25c05 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body {
+  padding: 0;
+  padding-left: 10px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body ul {
+  padding-left: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body ul li a {
+  text-transform: none;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button {
+  background-color: black;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-weight: 400;
+  border: none;
+  outline: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button .accordion2-title {
+  text-transform: none;
+  color: #fff;
+  height: unset;
+  line-height: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .accordion2-title {
+  color: #e75e03;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .icon::before {
+  color: #e75e03 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button:focus .icon::after {
+  color: #e75e03 !important;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon::before {
+  color: gray !important;
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button .icon::after {
+  color: gray !important;
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 button[aria-expanded=true] + .accordion2-content {
+  opacity: 1;
+  max-height: 100%;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: black;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content ul {
+  padding-left: 5px;
+  list-style: none;
+}
+.menu-logo .menu1-content .logo .modal.left .modal-dialog .modal-content .modal-body .menu2 ul li .a2 .accordion-item .accordion-collapse .accordion-body .accordion2 .accordion2-content ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu-logo .menu1-content .logo .modal.left.fade .modal-dialog {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+.menu-logo .menu1-content .logo .modal.left.fade.show .modal-dialog {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
 }
 .menu-logo .menu1-content .logo img {
+  padding-left: 10px;
   max-width: 100%;
   height: auto;
 }
@@ -179,12 +639,11 @@ body {
   min-height: 20px;
 }
 .menu-logo .menu1-content .control ul {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+  float: right;
   margin-bottom: 0;
 }
 .menu-logo .menu1-content .control ul li {
+  float: left;
   margin-right: 20px;
   display: flex;
   justify-content: end;
@@ -249,11 +708,139 @@ body {
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+.menu .left .drop-down {
+  max-height: 440px;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  transform: perspective(500px) rotateX(-90deg);
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.menu .left .drop-down .item_small {
+  width: 100%;
+  list-style: none;
+  position: absolute;
+  padding-left: 0;
+}
+.menu .left .drop-down .item_small::before {
+  content: "";
+  display: block;
+  height: 22.5px;
+}
+.menu .left .drop-down .item_small > li {
+  background-color: white;
+  position: relative;
+}
+.menu .left .drop-down .item_small > li:nth-child(2) .drop-down-layer3 {
+  top: -100%;
+}
+.menu .left .drop-down .item_small > li:nth-child(3) .drop-down-layer3 {
+  top: -200%;
+}
+.menu .left .drop-down .item_small > li:nth-child(4) .drop-down-layer3 {
+  top: -300%;
+}
+.menu .left .drop-down .item_small > li:nth-child(5) .drop-down-layer3 {
+  top: -400%;
+}
+.menu .left .drop-down .item_small > li:nth-child(6) .drop-down-layer3 {
+  top: -500%;
+}
+.menu .left .drop-down .item_small > li:nth-child(7) .drop-down-layer3 {
+  top: -600%;
+}
+.menu .left .drop-down .item_small > li:nth-child(8) .drop-down-layer3 {
+  top: -700%;
+}
+.menu .left .drop-down .item_small > li:nth-child(9) .drop-down-layer3 {
+  top: -800%;
+}
+.menu .left .drop-down .item_small > li:nth-child(10) .drop-down-layer3 {
+  top: -900%;
+}
+.menu .left .drop-down .item_small > li a {
+  background-size: 25px;
+  background-position: center left;
+  background-position-x: 8px;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-color: black;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  color: white;
+  position: relative;
+  text-align: left;
+  text-transform: none;
+}
+.menu .left .drop-down .item_small > li a:hover {
+  color: white;
+  background-color: #e75e03;
+}
+.menu .left .drop-down .item_small > li a i {
+  top: 15px;
+  height: 5px;
+  transform: rotate(-360deg);
+  position: absolute;
+  right: 10px;
+}
+.menu .left .drop-down .item_small > li:hover .drop-down-layer3 {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+.menu .left .drop-down .item_small > li .drop-down-layer3 {
+  min-height: 440px;
+  height: 100%;
+  border: 2px solid #ffb700;
+  padding-left: 0px;
+  margin-left: 0px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  padding: 25px 25px 0px 35px;
+  left: 100%;
+  min-width: 260%;
+  top: 0;
+  overflow-y: auto;
+}
+.menu .left .drop-down .item_small > li .drop-down-layer3 .nav_item {
+  padding: 0px 15px;
+  display: block;
+  float: left;
+}
+.menu .left .drop-down .item_small > li .drop-down-layer3 .nav_item a {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+  padding: 0px 0px 8px 0px;
+  margin-bottom: 0px;
+  position: relative;
+  border-bottom: 0px;
+}
+.menu .left .drop-down .item_small > li .drop-down-layer3 .nav_item a:hover {
+  color: #e75e03;
+}
+.menu .left:hover .drop-down, .menu .left:focus .drop-down {
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(500px) rotateX(0deg);
+  transition: all 0.5s ease-in-out;
 }
 .menu .right {
   max-width: 100%;
-  overflow: auto;
   text-wrap: nowrap;
+  overflow: auto;
   display: flex;
   align-items: center;
 }
@@ -261,6 +848,7 @@ body {
   display: none;
 }
 .menu .right ul {
+  height: auto;
   padding: 0 15px;
   display: flex;
   margin-bottom: 0;
@@ -274,6 +862,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   margin-right: 20px;
+  z-index: 9999;
 }
 .menu .right ul li a {
   text-decoration: none;
@@ -289,13 +878,12 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 .menu .right ul li .drop-down {
+  position: absolute;
   visibility: hidden;
   opacity: 0;
-  z-index: 9;
-  position: relative;
-  transform: rotatex(-90deg);
+  z-index: 99;
+  transform: perspective(500px) rotateX(-90deg);
   transition: all 0.5s ease-in-out;
-  box-shadow: 0px -100px 500px rgba(0, 0, 0, 0);
 }
 .menu .right ul li .drop-down .item_small {
   position: absolute;
@@ -307,6 +895,9 @@ body {
   content: "";
   display: block;
   height: 15.5px;
+}
+.menu .right ul li .drop-down .item_small li {
+  position: relative;
 }
 .menu .right ul li .drop-down .item_small li a {
   background-color: white;
@@ -323,11 +914,54 @@ body {
 .menu .right ul li .drop-down .item_small li a:hover {
   color: #e75e03;
 }
-.menu .right ul li:hover .drop-down, .menu .right ul li:focus .drop-down {
-  transition: all 0.5s ease-in-out;
-  visibility: visible;
-  transform: rotatex(0deg);
+.menu .right ul li .drop-down .item_small li a i {
+  height: 25px;
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 10px;
+}
+.menu .right ul li .drop-down .item_small li:hover .drop-down-layer2 {
+  transition: all 0.3s ease-in-out;
   opacity: 1;
+  visibility: visible;
+}
+.menu .right ul li .drop-down .item_small li .drop-down-layer2 {
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 100%;
+}
+.menu .right ul li .drop-down .item_small li .drop-down-layer2 ul {
+  position: absolute;
+  display: inline-block;
+  min-width: 275px;
+  padding-left: 0;
+}
+.menu .right ul li .drop-down .item_small li .drop-down-layer2 ul li {
+  position: relative;
+}
+.menu .right ul li .drop-down .item_small li .drop-down-layer2 ul li a {
+  background-color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+  padding: 6px 20px 6px 10px;
+  color: #000;
+  position: relative;
+  text-align: left;
+  text-transform: none;
+}
+.menu .right ul li .drop-down .item_small li .drop-down-layer2 ul li a:hover {
+  color: #e75e03;
+}
+.menu .right ul li:hover .drop-down, .menu .right ul li:focus .drop-down {
+  visibility: visible;
+  opacity: 1;
+  transform: perspective(500px) rotateX(0deg);
+  transition: all 0.5s ease-in-out;
 }
 
 .banner {
@@ -2586,6 +3220,99 @@ body {
   display: none;
 }
 
+.backtop {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 100px;
+  top: auto !important;
+  right: 20px;
+  background: #ffb700;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 999;
+  border: 1px solid #fff;
+  opacity: 0;
+}
+.backtop svg {
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+.show {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.hidden {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.zalo-link {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 55px;
+  right: 60px;
+  top: auto !important;
+  z-index: 999;
+}
+
+.add-contact {
+  position: fixed;
+  bottom: 170px;
+  right: 17px;
+  margin: 0;
+  z-index: 990;
+  cursor: pointer;
+  top: auto !important;
+}
+.add-contact .box-item:before, .add-contact .box-item:after {
+  position: absolute;
+  content: "";
+  height: 48px;
+  width: 48px;
+  left: 0;
+  top: 0;
+  background: #ffb700;
+  border-radius: 50%;
+}
+.add-contact .box-item .svgico {
+  position: relative;
+  z-index: 4;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  background: #ffb700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+}
+.add-contact .box-item .svgico svg {
+  animation: iconSkew 1s infinite ease-out;
+  fill: #000;
+  width: 30px;
+  height: 46px;
+  transition: opacity 0.35s ease-in-out;
+}
+.add-contact .box-item .svgico .svgico--close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.3);
+  transition: opacity 0.35s ease-in-out;
+}
+
 @keyframes shine {
   100% {
     left: 125%;
@@ -2599,6 +3326,29 @@ body {
     opacity: 0;
   }
 }
+@keyframes iconSkew {
+  0% {
+    transform: rotate(0deg) scale(1) skew(1deg);
+  }
+  10% {
+    transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    transform: rotate(0deg) scale(1) skew(1deg);
+  }
+  100% {
+    transform: rotate(0deg) scale(1) skew(1deg);
+  }
+}
 @media screen and (max-width: 1400px) {
   .menu .right {
     width: 720px;
@@ -2609,7 +3359,7 @@ body {
     width: 630px;
   }
   .menu-logo .menu1-content .control ul li {
-    margin-right: 5px;
+    margin-right: 0px;
   }
   .menu-logo .menu1-content .control ul li a .title {
     font-size: 14px;
@@ -2641,6 +3391,56 @@ body {
   }
 }
 @media screen and (max-width: 992px) {
+  .menu-logo .menu1-content .control ul {
+    float: right;
+    margin-bottom: 0;
+  }
+  .menu-logo .menu1-content .control ul li {
+    float: left;
+    margin-right: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .menu-logo .menu1-content .control ul li:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+  .menu-logo .menu1-content .control ul li .icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffb700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  .menu-logo .menu1-content .control ul li .icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffb700;
+  }
+  .menu-logo .menu1-content .control ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  .menu-logo .menu1-content .control ul li a .title {
+    font-size: 18px;
+    color: #ffb700;
+    font-weight: 700;
+  }
+  .menu-logo .menu1-content .control ul li a .content {
+    font-size: 14px;
+  }
+  .menu-logo .menu1-content .control ul li a .content span {
+    color: #ffb700;
+  }
+  .menu-logo .menu1-content .control ul li a:hover {
+    color: #f25c05;
+  }
+  .menu-logo .menu1-content .control ul li a:hover .title {
+    color: #f25c05;
+  }
   .menu {
     display: none;
   }
@@ -2687,12 +3487,16 @@ body {
     display: block;
   }
   .menu-logo .menu1-content .logo {
+    justify-content: center;
     text-align: center;
     padding: 10px 0;
   }
   .menu-logo .menu1-content .logo img {
     height: 50px;
     max-width: 100%;
+  }
+  .menu-logo .menu1-content .logo .menu-bar svg {
+    display: none;
   }
   .menu-logo .menu1-content .control {
     display: none;
@@ -2720,6 +3524,9 @@ body {
   }
   .top-footer .accordion2 {
     display: block;
+  }
+  .footer {
+    padding-bottom: 60px;
   }
 }
 @media screen and (max-width: 576px) {

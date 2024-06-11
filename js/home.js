@@ -189,7 +189,22 @@ function toggleAccordion() {
   }
 }
 
-items.forEach((item) => item.addEventListener('click', toggleAccordion));
+// scroll hien thi back to top
+
+   // Tạo một hàm xử lý sự kiện scroll
+   function handleScroll() {
+    let scroll_h = window.pageYOffset || document.documentElement.scrollTop;
+    if (parseInt(scroll_h) > 300) {
+        document.querySelector(".backtop").classList.add("show");
+        document.querySelector(".backtop").classList.remove("hidden");
+    } else {
+        document.querySelector(".backtop").classList.remove("show");
+        document.querySelector(".backtop").classList.add("hidden");
+    }
+}
+
+// Thêm sự kiện scroll chỉ đối với các phần tử mà bạn muốn xử lý
+window.addEventListener('scroll', handleScroll);
 
 
 
