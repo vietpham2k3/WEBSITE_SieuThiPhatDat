@@ -177,17 +177,21 @@ function opentab2(tabname) {
   document.getElementById(tabname).classList.add("active-tab2");
 }
 // according footer
-const items = document.querySelectorAll('.accordion2 button');
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.accordion2 button');
 
-function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          const itemToggle = this.getAttribute('aria-expanded');
 
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
-  } else {
-    this.setAttribute('aria-expanded', 'false');
-  }
-}
+          if (itemToggle === 'false') {
+              this.setAttribute('aria-expanded', 'true');
+          } else {
+              this.setAttribute('aria-expanded', 'false');
+          }
+      });
+  });
+});
 
 // scroll hien thi back to top
 
