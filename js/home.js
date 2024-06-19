@@ -75,7 +75,7 @@ $(".image-slider2").owlCarousel({
       0: {
         items: 1,
       },
-      480: {
+      300: {
         items: 2,
       },
       786: {
